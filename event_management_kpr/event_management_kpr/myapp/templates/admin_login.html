@@ -1,0 +1,28 @@
+{% extends 'index_1.html' %}
+{% block content %}
+<div class="container ms-5">
+    <div class="ms-5">
+        <div class="card p-2 ms-5 shadow-lg" style="max-width: 350px; width: 100%;">
+       
+            <h2 class="text-center mb-4 card-header">Admin Login</h2>
+            <div class="card-body">
+            <form action="/admin_login_data" method="POST">
+            {% csrf_token %}
+                <!-- Username Input -->
+                <div class="mb-3">
+                  <label for="username" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="username" placeholder="Enter your username" required  name="username">
+                </div>
+                <!-- Password Input -->
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Enter your password" required name="pas">
+                </div>
+                <!-- Login Button -->
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock %}

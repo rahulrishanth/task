@@ -1,0 +1,105 @@
+
+.img1{
+    height:50%;
+    width:90%
+} 
+   
+/* Reset some default styles for the page */
+body {
+   font-family: Arial, sans-serif; /* Set a clean font */
+   margin: 0;
+   padding: 0;
+   background-color: #f4f4f4; /* Light background color */
+}
+
+/* Style the navigation bar */
+nav {
+   background-color: #333; /* Dark background color */
+}
+
+/* Style the list of links */
+.nav-list {
+   list-style-type: none; /* Remove bullet points */
+   padding: 0;
+   margin: 0;
+   display: flex; /* Use flexbox for horizontal layout */
+   justify-content: center; /* Center the navigation items */
+}
+
+.nav-list li {
+   margin: 0 15px; /* Space between each item */
+}
+
+.nav-list a {
+   color: white; /* White text color */
+   text-decoration: none; /* Remove underlines from links */
+   font-size: 18px; /* Text size */
+   padding: 10px 20px; /* Padding for better clickability */
+   display: block; /* Makes the link a block-level element */
+   transition: background-color 0.3s; /* Smooth hover transition */
+}
+
+.nav-list a:hover {
+   background-color: #575757; /* Darken the background when hovering */
+   border-radius: 5px; /* Round the corners of the hovered item */
+}
+
+/* Optional: Style for active page link */
+.nav-list a:active {
+   background-color: #444; /* Slightly darker color when active */
+}
+
+
+
+
+h5{
+   padding-top: 200%;
+}
+
+.gap{
+   width: 1px;
+   height: 1px;
+   color: white;
+}
+
+ /* Style for the box */
+.box-1 {
+   width: 40%;          /* Set the width of the box */
+   height: 40%;     /* Set the height of the box */
+   background-color: #3498db;  /* Set the background color */
+   border: 5px solid #2c3e50;  /* Set a border around the box */
+   padding: 20px;         /* Add some padding inside the box */
+   margin: 50px auto;     /* Add margin to center it horizontally */
+   border-radius: 10px;   /* Optional: round the corners */
+ }
+
+ .box-2 {
+   width: 100%;          /* Set the width of the box */
+   height: 50vh;     /* Set the height of the box */
+   /*background-color: #3498db;  /* Set the background color */
+   border: 5px solid #2c3e50;  /* Set a border around the box */
+   padding: 20px;         /* Add some padding inside the box */
+   margin: 50px auto;     /* Add margin to center it horizontally */
+   border-radius: 10px;   /* Optional: round the corners */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .box-3 {
+   width: 100%;          /* Set the width of the box */
+   height: 50vh;     /* Set the height of the box */
+   /*background-color: #3498db;  /* Set the background color */
+   border: 5px solid #2c3e50;  /* Set a border around the box */
+   padding: 20px;         /* Add some padding inside the box */
+   margin: 50px auto;     /* Add margin to center it horizontally */
+   border-radius: 10px;   /* Optional: round the corners */
+ }
+
+ .main_content{
+    width: 300px;
+    height: 300px;
+    overflow: auto;
+ }
+ 
+

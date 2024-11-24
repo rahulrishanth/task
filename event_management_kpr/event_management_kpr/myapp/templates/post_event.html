@@ -1,0 +1,43 @@
+{% extends "admin_layout_1.html" %}
+{% block admin_content %}
+    <div class="container">
+      <center><h1>POST EVENT</h1></center>
+      <form action="/post_event_data" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" value="null" name="id" hidden>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="event_name">
+            <label for="floatingInput">event name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="date" class="form-control" id="floatingPassword" placeholder="Password" name="event_date">
+            <label for="floatingPassword">event date</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="description">
+            <label for="floatingInput">description</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="file" class="form-control" id="floatingPassword" placeholder="Password" name="img">
+            <label for="floatingPassword">invitation</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="venue">
+            <label for="floatingInput">venue</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="time" class="form-control" id="floatingInput" placeholder="name@example.com" name="time">
+            <label for="floatingInput">time</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="file" class="form-control" id="floatingPassword" placeholder="Password" name="guest_pic">
+            <label for="floatingPassword">guest profile</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="guest_name">
+            <label for="floatingInput">guest name</label>
+          </div>
+          <input type="submit" class="btn btn-success">
+    </form>
+    </div>
+{% endblock %}

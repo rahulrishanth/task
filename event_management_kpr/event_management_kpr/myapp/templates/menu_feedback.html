@@ -1,0 +1,27 @@
+{% extends 'user_layout.html' %}
+{% block user_content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <table class="table">
+                    <thead class="text-center">
+                        <tr>
+                            <th>event name</th>
+                            <th>feedback</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        {% for i in res %}
+                        <tr>
+                            <td>{{ i.ref_event.event_name }}</td>
+                            <td><a href="/feeback_data/{{i.id}}" class="btn btn-primary">feedback</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+{% endblock %}

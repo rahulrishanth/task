@@ -1,0 +1,88 @@
+{% extends "admin_layout_1.html" %}
+{% block admin_content %}
+<div class="container">
+    <center><h1>view events</h1></center>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>event name</th>
+                <th>event image</th>
+                <th>event date</th>
+                <th>event description</th>
+                <th>event venue</th>
+                <th>event time</th>
+                <th>update</th>
+                <th>delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in res %}
+            <tr>
+                <td>{{i.event_name}}</td>
+                <td><img src="{{i.image.url}}" alt="#" width="100px" height="100px"></td>
+                <td>{{i.event_date}}</td>
+                <td>{{i.description}}</td>
+                <td>{{i.venue}}</td>
+                <td>{{i.event_time}}</td>
+                <td><!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{i.id}}">
+                     update
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal{{i.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form action="/post_event_data" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="event_name" value="{{i.event_name}}">
+                                    <label for="floatingInput">event name</label>
+                                  </div>
+                                  <div class="form-floating mb-3">
+                                    <input type="date" class="form-control" id="floatingPassword" placeholder="Password" name="event_date" value="{{i.event_date}}">
+                                    <label for="floatingPassword">event date</label>
+                                  </div>
+                                  <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="description" value="{{i.description}}">
+                                    <label for="floatingInput">description</label>
+                                  </div>
+                                  {% if i.image %}
+                                  <input type="text" value="{{i.id}}" name="id" hidden>
+                                  <img src="{{i.image.url}}" alt="#" width="100px" height="100px">
+                                  {% endif %}
+                                  <div class="form-floating mb-3">
+                                    <input type="file" class="form-control" id="floatingPassword" placeholder="Password" name="img" value="{{i.image}}">
+                                    <label for="floatingPassword">invitation</label>
+                                  </div>
+                                  <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="venue" value="{{i.venue}}">
+                                    <label for="floatingInput">venue</label>
+                                  </div>
+                                  <div class="form-floating mb-3">
+                                    <input type="time" class="form-control" id="floatingInput" placeholder="name@example.com" name="time" value="{{i.event_time}}">
+                                    <label for="floatingInput">time</label>
+                                  </div>
+                                  <input type="submit" class="btn btn-success">
+                            </form>
+                          </div>
+                          <!-- <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div> -->
+                        </div>
+                      </div>
+                    </div></td>
+                <td><a href="/event_delete/{{i.id}}">delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+{% endblock %}

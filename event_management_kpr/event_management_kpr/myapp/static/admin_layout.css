@@ -1,0 +1,67 @@
+.h1{
+    background-color: blue;
+    
+  }
+  
+  .box-0 {
+    width: 99%;              /* Width of the box */
+    height: 80px;             /* Height of the box */
+    /*background-color: #4CAF50; /* Background color (green) */
+    border: 2px solid #000;    /* Border color (black) */
+    margin: 20px;              /* Space around the box */
+    padding: 20px;             /* Padding inside the box */
+  }
+  
+  /* Style the navigation bar */
+  nav {
+    background-color: #333; /* Dark background color */
+  }
+  
+  /* Style the list of links */
+  .nav-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center the navigation items */
+  }
+  
+  .nav-list li {
+    margin: 0 15px; /* Space between each item */
+  }
+  
+  .nav-list a {
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underlines from links */
+    font-size: 18px; /* Text size */
+    padding: 10px 20px; /* Padding for better clickability */
+    display: block; /* Makes the link a block-level element */
+    transition: background-color 0.3s; /* Smooth hover transition */
+  }
+  
+  .nav-list a:hover {
+    background-color: #575757; /* Darken the background when hovering */
+    border-radius: 5px; /* Round the corners of the hovered item */
+  }
+  
+  /* Optional: Style for active page link */
+  .nav-list a:active {
+    background-color: #444; /* Slightly darker color when active */
+  }
+  
+  /*.cont{
+    padding-left: 10%;
+  }*/
+  
+  .action-link {
+        color:inherit;
+        font-size:150%;
+        text-decoration: none;
+        margin: 10px;
+      }
+  
+  a{
+    text-size-adjust: 30%;
+    text-decoration: none;
+  
+  }

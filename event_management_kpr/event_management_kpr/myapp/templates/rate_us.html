@@ -1,0 +1,38 @@
+{% extends 'user_layout.html' %}
+{% block user_content %}
+<div class="container">
+    <div class="container">
+        <h1>EVENT NAME:{{res.ref_event.event_name}}</h1>
+        <img src="{{res.ref_event.image.url}}" alt="#" width="100px" height="100px">
+    </div>
+    <form action="/rating_data" method="POST">
+        {% csrf_token %}
+        <input type="text" value="{{res.id}}" name="id">
+        <div>
+            <h4>DISCRIPTION</h4>
+            <textarea name="description" id="description" class="form-control"></textarea>
+            <br>
+            <h4>RATE for this application</h4>
+            <div class="row">
+                <div class="col-2">
+                    <div class="wrapper">
+                        <input type="checkbox" id="st1"  name="star" value="5"/>
+                        <label for="st1"></label>
+                        <input type="checkbox" id="st2"  name="star" value="4" />
+                        <label for="st2"></label>
+                        <input type="checkbox" id="st3" name="star"  value="3"/>
+                        <label for="st3"></label>
+                        <input type="checkbox" id="st4" name="star"  value="2"/>
+                        <label for="st4"></label>
+                        <input type="checkbox" id="st5" name="star" value="1" />
+                        <label for="st5"></label>
+                      </div>
+                </div>
+            </div>
+            <br>
+            <input type="submit" class="btn btn-success" value="rate_us">
+        </div>
+    </form>
+</div>
+
+{% endblock %}

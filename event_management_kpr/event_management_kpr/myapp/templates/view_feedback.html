@@ -1,0 +1,25 @@
+{% extends "admin_layout_1.html" %}
+{% block admin_content %}
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>event name</th>
+                <th>student name</th>
+                <th>description</th>
+                <th>rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in res %}
+            <tr>
+                <td>{{i.ref_event.event_name}}</td>
+                <td>{{i.ref_student.email}}</td>
+                <td>{{i.description}}</td>
+                <td>{{i.star}}stars</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
